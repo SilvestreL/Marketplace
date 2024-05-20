@@ -1,0 +1,67 @@
+html, body, #root, .App {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #ffffff; /* Fundo branco */
+  color: #000000; /* Texto preto */
+  font-family: 'Inter', sans-serif; /* Fonte moderna e limpa */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 60px; /* Espaço para o footer fixo */
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5em;
+  color: #000000; /* Texto preto */
+  margin: 20px 0;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.main-content.with-cart {
+  flex-direction: row;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto; /* Permitir rolagem vertical */
+  padding-right: 20px;
+}
+
+.main-content.with-cart .content {
+  width: 70%; /* Ajuste a largura conforme necessário */
+}
+
+.cart {
+  width: 30%; /* Ajuste a largura conforme necessário */
+  padding: 20px;
+  box-sizing: border-box;
+  border-left: 1px solid #ddd;
+  background-color: #f8f8f8;
+}

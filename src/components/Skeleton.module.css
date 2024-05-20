@@ -1,0 +1,62 @@
+/* Skeleton.module.css */
+.skeletonList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .skeletonItem {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .skeletonAvatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skeletonTitle, .skeletonText {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skeletonTitle {
+    width: 30%;
+    height: 20px;
+  }
+  
+  .skeletonText {
+    width: 60%;
+    height: 20px;
+  }
+  
+  .skeletonAvatar::after, .skeletonTitle::after, .skeletonText::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150px;
+    height: 100%;
+    width: 150px;
+    background: linear-gradient(to right, transparent 0%, #f0f0f0 50%, transparent 100%);
+    animation: loading 1.2s infinite;
+  }
+  
+  @keyframes loading {
+    0% {
+      left: -150px;
+    }
+    50% {
+      left: 100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  

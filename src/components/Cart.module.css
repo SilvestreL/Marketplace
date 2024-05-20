@@ -1,0 +1,127 @@
+.cartContainer {
+  width: 30%;
+  padding: 20px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+}
+
+.cart {
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
+
+.cart h2 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #333;
+  text-align: center; /* Centraliza o título */
+}
+
+.cartItem {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.cartImage {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.cartDetails {
+  flex: 1;
+}
+
+.cartDetails p {
+  margin: 0 0 10px 0;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+}
+
+.quantity button {
+  background: none;
+  border: 1px solid #dddddd;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Adiciona transição para animação */
+}
+
+.quantity button:hover {
+  background-color: #ddd;
+  transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+}
+
+.quantity span {
+  margin: 0 10px;
+}
+
+.removeButton {
+  background-color: #888; /* Cor cinza */
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.3s; /* Adiciona transição para animação */
+}
+
+.removeButton:hover {
+  background-color: #555; /* Cor mais escura ao hover */
+  transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+}
+
+.summary {
+  margin-top: 20px;
+}
+
+.summary p {
+  margin: 10px 0;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.discountText {
+  color: #007bff; /* Azul para destacar o desconto */
+  font-weight: bold;
+}
+
+.paymentOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.paymentOptions label {
+  margin-bottom: 5px;
+}
+
+.paymentOptions select {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.shippingButton, .checkoutButton {
+  background-color: #888; /* Cinza */
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.3s; /* Adiciona transição para animação */
+}
+
+.shippingButton:hover, .checkoutButton:hover {
+  background-color: #555; /* Cinza mais escuro ao hover */
+  transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+}

@@ -1,0 +1,19 @@
+.footer {
+  background-color: #242424; /* Cor de fundo do footer */
+  color: #ffffff; /* Cor do texto */
+  padding: 10px 0; /* Reduzir o espaçamento interno */
+  text-align: center; /* Alinhamento centralizado do texto */
+  width: 100%; /* Ocupar 100% da largura */
+  position: fixed; /* Fixar na parte inferior da página */
+  bottom: 0; /* Alinhar ao fundo */
+  left: 0; /* Alinhar à esquerda */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve acima do footer */
+  z-index: 1000; /* Garantir que o footer esteja acima de outros elementos */
+}
+
+.content {
+  max-width: 1200px; /* Largura máxima */
+  margin: 0 auto; /* Centralizar horizontalmente */
+  padding: 0 20px; /* Espaçamento interno nas laterais */
+  box-sizing: border-box; /* Incluir padding e border no cálculo da largura */
+}

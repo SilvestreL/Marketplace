@@ -1,0 +1,57 @@
+.formContainer {
+    max-width: 600px; /* Define a largura máxima do contêiner do formulário como 600px. */
+    margin: 0 auto; /* Centraliza o contêiner do formulário horizontalmente. */
+    padding: 20px; /* Adiciona 20px de preenchimento interno ao contêiner do formulário. */
+    border: 1px solid #ccc; /* Define uma borda sólida e cinza clara ao redor do contêiner do formulário. */
+    border-radius: 10px; /* Arredonda os cantos do contêiner do formulário em 10px. */
+    background-color: #f9f9f9; /* Define a cor de fundo do contêiner do formulário como cinza muito claro. */
+  }
+  
+  .formContainer h1 {
+    text-align: center; /* Centraliza o texto do cabeçalho h1 horizontalmente. */
+    margin-bottom: 20px; /* Adiciona uma margem inferior de 20px ao cabeçalho h1. */
+  }
+  
+  .formGroup {
+    margin-bottom: 15px; /* Adiciona uma margem inferior de 15px a cada grupo de formulário. */
+  }
+  
+  .formGroup label {
+    display: block; /* Faz com que o label ocupe a largura total disponível. */
+    margin-bottom: 5px; /* Adiciona uma margem inferior de 5px ao label. */
+    font-weight: bold; /* Define o texto do label em negrito. */
+  }
+  
+  .formGroup input,
+  .formGroup select {
+    width: calc(100% - 20px); /* Define a largura do input e select para ocupar 100% da largura do contêiner, menos 20px. */
+    padding: 8px 10px; /* Adiciona 8px de preenchimento vertical e 10px de preenchimento horizontal. */
+    font-size: 16px; /* Define o tamanho da fonte dos inputs e selects como 16px. */
+    border: 1px solid #ccc; /* Define uma borda sólida e cinza clara ao redor dos inputs e selects. */
+    border-radius: 5px; /* Arredonda os cantos dos inputs e selects em 5px. */
+  }
+  
+  .formGroup input:disabled,
+  .formGroup select:disabled {
+    background-color: #e9ecef; /* Define a cor de fundo dos inputs e selects desabilitados como cinza claro. */
+    cursor: not-allowed; /* Define o cursor como não permitido para inputs e selects desabilitados. */
+  }
+  
+  .buttonContainer {
+    text-align: center; /* Centraliza o conteúdo do contêiner do botão horizontalmente. */
+  }
+  
+  .buttonContainer button {
+    background-color: #007bff; /* Define a cor de fundo do botão como azul. */
+    color: #fff; /* Define a cor do texto do botão como branca. */
+    border: none; /* Remove a borda do botão. */
+    padding: 10px 20px; /* Adiciona 10px de preenchimento vertical e 20px de preenchimento horizontal ao botão. */
+    font-size: 16px; /* Define o tamanho da fonte do botão como 16px. */
+    border-radius: 5px; /* Arredonda os cantos do botão em 5px. */
+    cursor: pointer; /* Altera o cursor para indicar que o botão é clicável. */
+  }
+  
+  .buttonContainer button:hover {
+    background-color: #0056b3; /* Muda a cor de fundo do botão para um azul mais escuro quando o mouse passa sobre ele. */
+  }
+  

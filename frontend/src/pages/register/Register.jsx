@@ -3,7 +3,6 @@ import styles from './Register.module.css';
 
 const Register = () => {
   const [form, setForm] = useState({
-    id: '',
     fullName: '',
     email: '',
     cpf: '',
@@ -18,18 +17,24 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (form.password !== form.confirmPassword) {
-      alert('Passwords do not match');
+      alert('As senhas não correspondem');
       return;
     }
 
+    console.log('Enviando dados:', {
+      fullName: form.fullName,
+      email: form.email,
+      cpf: form.cpf,
+      password: form.password,
+    });
+
     try {
-      const response = await fetch('http://localhost:3001/api/users', {
+      const response = await fetch('http://localhost:3001/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          id: form.id,
           fullName: form.fullName,
           email: form.email,
           cpf: form.cpf,
@@ -38,23 +43,30 @@ const Register = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        const errorData = await response.json();
+        console.error('Erro do servidor:', errorData);
+        throw new Error('A resposta da rede não foi ok');
       }
 
       const data = await response.json();
-      console.log('User created:', data);
+      console.log('Usuário criado:', data);
+      alert('Usuário criado com sucesso');
+      setForm({
+        fullName: '',
+        email: '',
+        cpf: '',
+        password: '',
+        confirmPassword: '',
+      }); // Limpar o formulário após o registro bem-sucedido
     } catch (error) {
-      console.error('Error creating user:', error);
+      console.error('Erro ao criar usuário:', error);
+      alert('Erro ao criar usuário');
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className={styles.formContainer}>
       <h1>Cadastro</h1>
-      <div className={styles.formGroup}>
-        <label>ID:</label>
-        <input type="text" name="id" value={form.id} onChange={handleChange} required />
-      </div>
       <div className={styles.formGroup}>
         <label>Nome Completo:</label>
         <input type="text" name="fullName" value={form.fullName} onChange={handleChange} required />

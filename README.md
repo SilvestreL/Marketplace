@@ -35,14 +35,14 @@ git clone https://github.com/seu-usuario/marketplace.git
 cd marketplace
 ```
 2. Instale as dependências
-Navegue até os diretórios do front-end e back-end e instale as dependências usando npm ou yarn:
+Navegue até os diretórios do front-end e back-end e instale as dependências usando npm:
 
 __Para o front-end__
 ```
 cd frontend
 npm install
 ```
-**Para o back-end**
+__Para o back-end__
 ```
 cd ../backend
 npm install

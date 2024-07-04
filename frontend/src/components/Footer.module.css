@@ -1,19 +1,59 @@
 .footer {
-  background-color: #c5c3c3; /* Cor de fundo do footer */
-  color: #ffffff; /* Cor do texto */
-  padding: 3px 0; /* Reduzir o espaçamento interno */
-  text-align: center; /* Alinhamento centralizado do texto */
-  width: 100%; /* Ocupar 100% da largura */
-  position: fixed; /* Fixar na parte inferior da página */
-  bottom: 0; /* Alinhar ao fundo */
-  left: 0; /* Alinhar à esquerda */
-  box-shadow: 0 -4px 6px #0000001a; /* Sombra leve acima do footer */
-  z-index: 1000; /* Garantir que o footer esteja acima de outros elementos */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 10px; /* Diminuí a altura do padding */
+  background-color: #f8f8f8;
+  border-top: 1px solid #e7e7e7;
+  font-size: 14px;
+  color: #333;
+  width: 100%;
 }
 
-.content {
-  max-width: 1200px; /* Largura máxima */
-  margin: 0 auto; /* Centralizar horizontalmente */
-  padding: 0 20px; /* Espaçamento interno nas laterais */
-  box-sizing: border-box; /* Incluir padding e border no cálculo da largura */
+.columns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.column {
+  flex: 1;
+  padding: 0 10px; /* Ajustei o padding para maior espaçamento */
+}
+
+.column h3 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.column p, .column a {
+  margin: 5px 0;
+  text-decoration: none;
+  color: #333;
+}
+
+.columnFollow {
+  text-align: right;
+  flex: 1;
+}
+
+.columnFollow h3,
+.columnFollow p,
+.columnFollow a {
+  color: #333; /* Certifique-se de que o texto na coluna Follow me on esteja preto */
+  justify-content: center;
+  height: 15px;
+  text-align: right;
+}
+
+.column a:hover {
+  text-decoration: underline;
+}
+
+.bottomNote {
+  text-align: center;
+  margin-top: 4px; /* Diminuí a margem superior */
+  width: 100%;
 }

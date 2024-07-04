@@ -21,17 +21,19 @@ function App() {
     <AuthProvider>
       <div className="App">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home items={items} loading={loading} error={error} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/cart" element={
-            <ProtectedRoute>
-              <Cart />
-            </ProtectedRoute>
-          } />
-        </Routes>
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={<Home items={items} loading={loading} error={error} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/cart" element={
+              <ProtectedRoute>
+                <Cart />
+              </ProtectedRoute>
+            } />
+          </Routes>
+        </div>
         <Footer />
       </div>
     </AuthProvider>

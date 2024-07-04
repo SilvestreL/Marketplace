@@ -13,21 +13,17 @@ body {
   font-family: 'Inter', sans-serif; /* Fonte moderna e limpa */
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .App {
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 100vh;
-  padding-bottom: 60px; /* Espaço para o footer fixo */
-}
-
-.title {
-  text-align: center;
-  font-size: 2.5em;
-  color: #000000; /* Texto preto */
-  margin: 20px 0;
-  font-weight: bold;
-  letter-spacing: 0.05em;
+  flex: 1;
 }
 
 .main-content {
@@ -38,6 +34,15 @@ body {
   align-items: center;
   padding: 20px;
   box-sizing: border-box;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5em;
+  color: #000000; /* Texto preto */
+  margin: 20px 0;
+  font-weight: bold;
+  letter-spacing: 0.05em;
 }
 
 .main-content.with-cart {

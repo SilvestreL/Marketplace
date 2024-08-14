@@ -1,37 +1,52 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import styles from './ProductList.module.css';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import ProductList from './ProductList';
+import styles from './Productlist.module.css';
 
-const ProductList = ({ items, addToCart }) => {
-  const displayedItems = items.slice(0, 8);
+const App = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    // Função para buscar produtos da API do Mercado Livre
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('https://api.mercadolibre.com/sites/MLB/search', {
+          params: {
+            q: 'smartphone', // Termo de busca
+            limit: 8         // Limitar a 8 itens
+          }
+        });
+
+        // Transformando os dados para o formato esperado pelo componente ProductList
+        const transformedProducts = response.data.results.map(product => ({
+          id: product.id,
+          name: product.title,
+          photo: product.thumbnail,
+          description: product.condition, // Você pode ajustar isso com base nos dados disponíveis
+          price: product.price,
+        }));
+
+        setProducts(transformedProducts);
+      } catch (error) {
+        console.error('Erro ao buscar produtos:', error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  // Função para adicionar o produto ao carrinho
+  const addToCart = (product) => {
+    console.log('Adicionando ao carrinho:', product);
+    // Lógica para adicionar ao carrinho
+  };
 
   return (
-    <div className={styles.productListContainer}>
-      <div className={styles.productList}>
-        {displayedItems.map((product) => (
-          <motion.div
-            key={product.id}
-            className={styles.productItem}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <img src={product.photo} alt={product.name} className={styles.productImage} />
-            <h2 className={styles.productName}>{product.name}</h2>
-            <p className={styles.productDescription}>{product.description}</p>
-            <p className={styles.productPrice}>${product.price}</p>
-            <motion.button
-              className={styles.addButton}
-              onClick={() => addToCart(product)}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              Add to Cart
-            </motion.button>
-          </motion.div>
-        ))}
-      </div>
+    <div className={styles.appContainer}>
+      <h1 className={styles.title}>Produtos</h1>
+      <ProductList items={products} addToCart={addToCart} />
     </div>
   );
 };
 
-export default ProductList;
+export default App;
